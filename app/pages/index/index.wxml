@@ -9,5 +9,16 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+
+    <view>
+      <view wx:if="{{flag}}">
+      <!-- 小程序函数调用不带括号 -->
+      <text bindtap="countAdd">{{word}}/{{count}}</text> 
+      </view>
+    </view>
+    <view>
+    <button type="warn" bindtap="gotohome"> 码农小木屋zx</button>
+    </view>
+
   </view>
 </view>

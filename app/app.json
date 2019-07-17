@@ -1,13 +1,19 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home",
+    
+    "pages/logs/logs",
+    
+    "pages/classify/classify",
+    "pages/cart/cart",
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "码农小木屋",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,2 +1,9 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view >
+    <text wx:if="{{show}}">这是一个快捷施法</text>
+</view>
+<photo></photo>
+
+<view>
+    <canvas style="width: 300px; height: 200px;" canvas-id="firstCanvas"></canvas>
+</view>

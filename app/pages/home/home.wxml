@@ -1,2 +1,105 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view>
+    <text>pages/home/home.wxml</text>
+    <view >
+        <demo
+            id="1902"
+            imgUrl="{{imgUrl}}"
+            num="{{count}}"
+            
+            bindmyevnet="changeword"
+        > 
+        <h2>这是 组件内容分发 slot </h2>
+        </demo>
+    </view>
+</view>
+
+ <view> {{ word }}</view>
+<view data-word="{{word}}" bindtap="countAdd"> count=== {{count}}</view>
+<view>
+<view data-id="{{id}}">{{flag?"今天学历":"面试题小意思"}} </view>
+<switch bindtap="changeflag" checked="{{flag}}"></switch>
+
+<!--  -->
+</view>
+<view wx:if="{{!flag}}">
+<!-- wx:if 和 wx:else搭配使用 -->
+    <image  src="{{imgUrl}}" class="h-img"  />
+</view>
+ <view wx:else> wx:if 的显示隐藏是渲染和不渲染的区别  </view>
+<view >
+<!-- wx:key  默认名 index不需要大括号 -->
+    <view wx:for="{{array}}" wx:key="index">
+    <!--默认 item每个对象 -->
+    {{index}}---{{item.message}}
+    </view>
+</view>
+
+<!-- hidden是display:none 始终会渲染 -->
+<view hidden="{{!flag}}">
+    <view wx:for="{{num}}" wx:for-item="i" wx:key="index">
+    <!--  -->
+        <view wx:for="{{num}}" wx:for-item="j" wx:for-index="ii" wx:key="ii">
+            <view wx:if="{{i<=j}}">
+                {{i}}*{{j}}={{i*j}}
+            </view>
+        
+        </view> 
+    </view>
+</view>
+
+<view wx:if="{{isLogin}}">
+    <view >你好:zxlover </view>
+</view>
+<view wx:else>你还未登录 <button type="primary">请登录</button>  </view>
+
+<view >
+
+  <button data-id="1902" data-msg="按钮用data-传递信息" bindtap="tapMe" type="primary">press on me</button>
+  <view >
+    <input placeholder="请输入"  bindinput="getSomething" ></input>
+     <!-- bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡 -->
+  </view>
+
+  <view bindtap="getParent">
+    <view bindtap="childOne" class="childone">
+        冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。
+            非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。
+    </view>
+    <view catchtap="childTwo" class="childtwo">
+        bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡
+    </view>
+  </view>
+  
+    <template name="users">
+    <!-- 模板使用 -->
+        <view >
+            <view >users-name</view>
+            <view >names={{names}}</view>
+            <view >age={{age}}</view>
+        </view>
+    </template>
+<!-- 引号外双内单 -->
+<!-- data="{{names:'zxlove',age:28}}"  -->
+<!-- data="{{ ...users }}" 展开运算符 -->
+    <template is="users" data="{{ ...users }}" ></template>
+<!-- import导入组件 ，src -->
+    <import src="/tpls/like.wxml" />
+    <template is="like" data="{{ ...like}}"></template>
+  <!-- 中部modal提示框 -->
+    <button type="warn" bindtap="openModal">打开modal</button>
+    <!-- 底部选项卡 -->
+    <button type="primary" bindtap="openaction">点击拍照上传</button>
+
+     <import  src="/tpls/actionsheet.wxml" />
+    <template  is="actionsheet" data="{{ ...actionData }}"/>
+    <!-- 登陆模块 -->
+    <import  src="/tpls/login.wxml" />
+    <template  is="login" data="{{ ...loginData }}"/>
+   
+    <button is="" type="warn" bindtap="openMyAction">打开自定义 actionsheet </button>
+
+    
+
+</view>
+

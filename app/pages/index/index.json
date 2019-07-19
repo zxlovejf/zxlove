@@ -1,16 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "wuhan1902",
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
-      }
-    ]
-  }
+  "navigationBarTitleText": "wuhan1902"
+  
 }

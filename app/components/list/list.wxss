@@ -1,0 +1,17 @@
+/* components/list/list.wxss */
+
+.scroll{
+    width:100%;
+    /* height:100%; */
+    overflow: auto;
+}
+
+.l-item{
+    width:96%;
+    border-bottom:2px dotted darkblue;
+    margin:10px auto;
+}
+
+.l-img{
+    width: 100%;
+}

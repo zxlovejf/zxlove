@@ -1,1 +1,5 @@
 /* components/demo/demo.wxss */
+.demo{
+    border:2px saddlebrown solid;
+
+}

@@ -1,2 +1,29 @@
 <!--pages/classify/classify.wxml-->
-<text>pages/classify/classify.wxml</text>
+<view wx:if="{{show}}" class="classify">
+    <view class="tabs">
+        <view 
+             wx:for="{{tabs}}" 
+             wx:key="{{index}}"
+             class="{{current==index?'item active':'item'}}"
+             bindtap="changeActive"
+             data-idx="{{index}}"
+            >
+            {{item.text}}
+        </view>
+    </view>
+    <view class="content">
+        <swiper
+        id="my-swiper"
+        bindchange="swiperchange"
+        current="{{current}}"
+        >
+            <swiper-item wx:for="{{tabs}}" wx:key="{{index}}">
+                <list 
+                tab="{{item}}"
+                goods="{{goods}}"
+                
+                ></list>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

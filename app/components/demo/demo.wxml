@@ -1,2 +1,8 @@
 <!--components/demo/demo.wxml-->
-<text>components/demo/demo.wxml</text>
+<text>components/demo/demo组建</text>
+<view class="demo">
+    <view > {{word}}   </view>
+    <view bindtap="changeCount"> count == {{count}} </view>
+    <view> props == {{id}}   /  {{imgUrl}}  / {{num}}</view>
+    <button type="warn" bindtap="changeParent"> 自定义事件去修改父组件 </button>
+</view>

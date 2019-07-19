@@ -1,1 +1,30 @@
 /* pages/home/home.wxss */
+
+.h-img{
+    width:400rpx;
+    /* iphone6  1px=2rpx (物理像素) */
+    height:600rpx;
+}
+.childone{
+    border: 2px solid red;
+}
+.childtwo{
+    margin-top:20px;
+    border: 2px solid yellow;
+}
+
+.label{
+    border:4rpx solid purple;
+    border-radius: 6px;
+    display: flex;
+    margin:20px;
+  }
+  .label input{
+    color:#000;
+  }
+  .code{
+    flex:3;
+  }
+  .h-btn{
+    flex:2;
+  }

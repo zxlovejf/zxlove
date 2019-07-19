@@ -1,0 +1,19 @@
+<!--components/list/list.wxml-->
+<view>
+    <scroll-view
+        scroll-y
+        class="scroll"
+    >
+    <!--竖向列表 -->
+
+        <view wx:for="{{good}}" wx:key="{{index}}" class="l-item">
+            <navigator url="../">
+            <!-- navigator点击路由跳转 -->
+                <image src="{{item.img}}" class="l-img"></image>
+                <view>
+                    {{item.name}} -- RMB ={{item.price}} --type=={{item.type.text}}
+                </view>
+            </navigator>
+        </view>
+    </scroll-view>
+</view>
